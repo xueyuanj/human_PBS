@@ -1,0 +1,54 @@
+---
+title: "expression.qc"
+output: html_document
+---
+
+```{r}
+library(ggfortify)
+library(ggplot2)
+library(DESeq2)
+library(edgeR)
+library(geneplotter)
+
+setwd("/data/human_PBS/mouse/mouse.expr.deseq2")
+
+exprfile=read.table("mouse.featurecounts.summary.header.txt", header = T)
+
+# filter genes which don't have at least 10 reads on each sample
+exprfile=exprfile[rowSums(exprfile[,7:ncol(exprfile)])>=2240,]
+#transcounts = exprfile[,7:ncol(exprfile)]
+geneids = exprfile$Geneid
+
+
+tissues = c("Brain", "Gut", "Heart", "Kidney", "Liver", "Lung", "Muscle", "Spleen", "Testis", "Thyroid")
+
+for (k in 1:length(tissues)) {
+  print(tissues[k])
+# get the data for one tissue 
+  subdf = exprfile[, grepl(tissues[k], names(exprfile))]
+# create the conditions, which is based on the populations
+  conditions = factor(substr(colnames(subdf),1,5 ))
+# generate DESeq object
+  mouseexpr = DESeqDataSetFromMatrix(subdf, DataFrame(conditions), ~ conditions)
+# normalize the sequencing depth
+  mouseexpr = estimateSizeFactors(mouseexpr)
+# input the length of the gene
+  mcols(mouseexpr)$basepairs = exprfile$Length
+# plot the density
+  multidensity(counts(mouseexpr, normalized = F), xlab = "mean counts", xlim=c(0,1000) )
+# Log transform for PCA
+  rld = rlog(mouseexpr, blind = T)
+# PCA
+  print(DESeq2::plotPCA(rld, intgroup=c("conditions")))
+# get the FPKM
+  mousefpkm = fpkm(mouseexpr, robust = T)
+# Add the gene infor
+  tokeep = cbind(exprfile[,c(1,6)], mousefpkm)
+  
+  filenm = paste("mouse" , tissues[k], "fpkm.deseq2.txt", sep=".")
+  #write.table(tokeep, file = filenm, row.names = F, col.names = T, quote = F, sep = "\t")
+  
+}
+
+
+```
