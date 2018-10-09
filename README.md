@@ -14,5 +14,12 @@ fst.pbs.distri.R
  
 Expression part
 To get Est, PBS of Est
- 
+get.counts.bash 	
+fst.gd462.plot.R 	
+getfilelist.bash 	
+replace.string.py 	
+expr.qc.Rmd
+
+
 To get Pst
+pst.gd462.plot.R 	
