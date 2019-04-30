@@ -1,9 +1,10 @@
-## human_PBS
+## Population-specific sequence and expression differentiation in Europeans
 The goal is the examine the population-specific divergence of genes
 ##
 ##
-Sequence PBS part: 
-To get Fst, PBS of Fst
+##Sequence PBS part
+
+##Download 
  	
 copy.file.bash 	
 process.1000gn.bash 	
