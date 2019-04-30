@@ -20,13 +20,18 @@ There are 22810 genes.
 
 ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
 
-Remomve the header
+##remomve the header
 
 $cat  ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf |grep -v \#|cut -f 1-5 > variant.1000genome.phase3_shapeit2_mvncall_integrated_v5b.20130502.txt
 
-Keep only SNP
+##keep only SNP
 
 $awk 'length($4)==1&&length($5)==1' variant.1000genome.phase3_shapeit2_mvncall_integrated_v5b.20130502.txt > snp.1000genome.phase3_shapeit2_mvncall_integrated_v5b.20130502.txt
+
+##to remove SNPs with MAF < 0.01, compute MAF. Note that the MAF here is calculated using all the individuals in the dataset.
+##run remove.maf.sh on cluster. remove.maf.sh is a wrapper script that implements remove.maf.R and remove.maf.bash
+
+$ bash remove.maf.sh
 
 
 copy.file.bash 	
