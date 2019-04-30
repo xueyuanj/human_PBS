@@ -2,8 +2,12 @@
 The goal is the examine the population-specific divergence of genes
 ##
 ##
-##Annotation file: GRCh37.75
+##Annotation file 
+
+GRCh37.75
+
 remove the header, then keep only protein-coding genes
+
 $awk '$2=="protein_coding"&&$3=="gene"{print}' Homo_sapiens.GRCh37.75.noheader.gtf > Homo_sapiens.GRCh37.75.noheader.protein_coding.gene.gtf
 
 There are 22810 genes.
