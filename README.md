@@ -20,6 +20,7 @@ There are 22810 genes.
 
 ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
 
+##Use script similar to the getfilelist.bash
 
 ##
 ##To remove SNPs with MAF < 0.01, compute MAF. 
@@ -35,13 +36,15 @@ $ bash remove.maf.sh
 ##
 ##Calculate Hudson's Fst for each SNP site. 
 
+##Use all the individuals in the four populations
+
 ##Keep the numerator and denominator in separate columns
 
 ##Run process.1000gn.sh on cluster
 
 ##process.1000gn.sh is wrapper script that implements process.1000gn.bash and keep.only.popofinterest
 
-##Due to the large size of the dataset, run process.1000gn.sh independently for each chromosome
+##Due to the large size, run process.1000gn.sh independently for each chromosome
 
 ##Moreover, process.1000gn.bash splits the data into smaller files each containing 10000 lines. Then go through the files
 
@@ -50,15 +53,30 @@ $bash process.1000gn.sh
 ##
 ##Map the SNP to genes
 
+##The annotation file for protein-coding genes is above
+
 ##Use map.probe.py, which also removes INDEL and keep only SNPs
 
 $ python map.probe.py
 
+##
+##Calculate ratio of average for Hudson's Fst for each gene
+
+##Run python map.probe.py on each chromosome
+
+##map.probe.py use all the information obtained previously, including SNP with MAP > 0.01, snp to gene map, and Hudson's Fst
+
+$ Python map.probe.py
+
+##
+##Merge the chromosomes
+
+
 copy.file.bash 	
-process.1000gn.bash 	
+
 recode.py 	
-remove.maf.R
-ratio.of.average.py 	
+
+
 fst.pbs.distri.R 	 
 ##
 ##
