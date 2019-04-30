@@ -16,6 +16,22 @@ There are 22810 genes.
 
 ##Expression PBS part
 
+##Download bam files from GEUVADIS project
+
+##List of individual bam files
+
+$curl ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/GEUV/E-GEUV-1/processed/*.bam > bam.file.list
+
+$cat bam.file.list |grep 'bam$' > bamfile.list
+
+##Select last column
+
+--> bam.file.names.txt
+
+##Use featureCounts to get the count of reads of each gene
+
+
+
 ##
 ##
 ##Sequence PBS part
@@ -24,7 +40,7 @@ There are 22810 genes.
 
 ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
 
-##Use script similar to the getfilelist.bash
+##Modify the getfilelist.bash to download gz files for each chromosome
 
 ##
 ##To remove SNPs with MAF < 0.01, compute MAF. 
