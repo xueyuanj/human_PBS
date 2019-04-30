@@ -33,14 +33,19 @@ $awk 'length($4)==1&&length($5)==1' variant.1000genome.phase3_shapeit2_mvncall_i
 ##
 ##To remove SNPs with MAF < 0.01, compute MAF. 
 ##Note that the MAF here is calculated using all the individuals in the dataset.
-##Run remove.maf.sh on cluster. remove.maf.sh is a wrapper script that implements remove.maf.R and remove.maf.bash
+##Run remove.maf.sh on cluster. 
+##remove.maf.sh is a wrapper script that implements remove.maf.R and remove.maf.bash
 
 $ bash remove.maf.sh
 
 ##
 ##Calculate Hudson's Fst for each SNP site. 
 ##Keep the numerator and denominator in separate columns
-##Run
+##Run process.1000gn.sh on cluster.
+##process.1000gn.sh is wrapper script that implements process.1000gn.bash and keep.only.popofinterest
+##Due to the size of the dataset, run process.1000gn.sh independently for each chromosome.
+##Moreover, process.1000gn.bash splits the data into smaller files each containing 10000 lines. Then go through the files
+
 
 
 copy.file.bash 	
