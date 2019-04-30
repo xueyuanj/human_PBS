@@ -33,6 +33,10 @@ $awk 'length($4)==1&&length($5)==1' variant.1000genome.phase3_shapeit2_mvncall_i
 
 $ bash remove.maf.sh
 
+##Calculate Hudson's Fst for each SNP site. 
+##Keep the numerator and denominator in separate columns
+##Run
+
 
 copy.file.bash 	
 process.1000gn.bash 	
