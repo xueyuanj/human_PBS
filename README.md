@@ -1,8 +1,8 @@
 ## human_PBS
-The goal is the examine the population-specific divergence of 
+The goal is the examine the population-specific divergence of genes
 ##
 ##
-Genotype part: 
+Sequence PBS part: 
 To get Fst, PBS of Fst
  	
 copy.file.bash 	
@@ -13,7 +13,7 @@ ratio.of.average.py
 fst.pbs.distri.R 	 
 ##
 ##
-Expression part: 
+Expression PBS part: 
 To get Est, PBS of Est
 get.counts.bash 	
 fst.gd462.plot.R 	
