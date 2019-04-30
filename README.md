@@ -50,11 +50,14 @@ $ bash remove.maf.sh
 
 ##process.1000gn.sh is wrapper script that implements process.1000gn.bash and keep.only.popofinterest
 
-##Due to the size of the dataset, run process.1000gn.sh independently for each chromosome
+##Due to the large size of the dataset, run process.1000gn.sh independently for each chromosome
 
 ##Moreover, process.1000gn.bash splits the data into smaller files each containing 10000 lines. Then go through the files
 
+$bash process.1000gn.sh
 
+##
+# 
 
 copy.file.bash 	
 process.1000gn.bash 	
