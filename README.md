@@ -14,6 +14,10 @@ There are 22810 genes.
 ##
 ##
 
+##Expression PBS part
+
+##
+##
 ##Sequence PBS part
 ##
 ##Download SNP data from 1000 genome website
@@ -50,6 +54,10 @@ $ bash remove.maf.sh
 
 $bash process.1000gn.sh
 
+##Afterwards, merge all the smaller files into one chromosome file
+
+$bash merge.bash
+
 ##
 ##Map the SNP to genes
 
@@ -69,7 +77,11 @@ $ python map.probe.py
 $ Python map.probe.py
 
 ##
-##Merge the chromosomes
+##Use the expression data to remove lowly expressed ones
+
+##This is the working file
+
+fst.hudson.1000genome.4pop.allindividual.ratioofave.maf0.01.pr_coding.rmlow.txt
 
 
 copy.file.bash 	
