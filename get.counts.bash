@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 
 
-GTF=Mus_musculus.GRCm38.93.chr.gtf
-BAM=accepted_hits.bam
+GTF=Homo_sapiens.GRCh37.87.gtf
+
 
 
 while read p; do
 	echo "$p"
-	base=${p%/accepted_hits.bam}
+	base=${p%.bam}
 	outf="${base}.counts.txt"
-	url="http://wwwuser.gwdg.de/~evolbio/evolgen/wildmouse/m_m_domesticus/transcriptomes/bam_gtf/"
+	url="ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/GEUV/E-GEUV-1/processed/"
 	downloads=$url$p
+	echo $downloads
 	wget $downloads
-	./featureCounts -p -a $GTF  -o $outf $BAM
-	rm -f $BAM
-done <mouse.files
+	./featureCounts -L -a $GTF  -o $outf $p
+	rm -f $p
+done <bam.file.names.txt
+
+
