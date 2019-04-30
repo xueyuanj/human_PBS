@@ -28,9 +28,13 @@ $cat bam.file.list |grep 'bam$' > bamfile.list
 
 --> bam.file.names.txt
 
-##Use featureCounts to get the count of reads of each gene
+##Use featureCounts to get the number of reads of each gene
 
+##Run get.counts.sh on cluster
 
+##get.counts.sh is a wrapper script which implements get.counts.bash
+
+$bash get.counts.sh
 
 ##
 ##
