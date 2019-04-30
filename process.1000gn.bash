@@ -19,6 +19,6 @@ do
         echo "${base}.${segfiles}.txt" 
         rm -f $segfiles
     done
-    find -type f -name "${base}.*.txt" -exec cat {} \; > "${base}.fst.hudson.txt"
+    find -type f -name "${base}.*.txt" -exec cat {} \; > "${base}.fst.hudson.4pop.txt"
     
 done
