@@ -20,15 +20,6 @@ There are 22810 genes.
 
 ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
 
-##
-##Remomve the header
-
-$cat  ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf |grep -v \#|cut -f 1-5 > variant.1000genome.phase3_shapeit2_mvncall_integrated_v5b.20130502.txt
-
-##
-##Remove INDEL. Keep only SNP
-
-$awk 'length($4)==1&&length($5)==1' variant.1000genome.phase3_shapeit2_mvncall_integrated_v5b.20130502.txt > snp.1000genome.phase3_shapeit2_mvncall_integrated_v5b.20130502.txt
 
 ##
 ##To remove SNPs with MAF < 0.01, compute MAF. 
@@ -57,7 +48,11 @@ $ bash remove.maf.sh
 $bash process.1000gn.sh
 
 ##
-# 
+##Map the SNP to genes
+
+##Use map.probe.py, which also removes INDEL and keep only SNPs
+
+$ python map.probe.py
 
 copy.file.bash 	
 process.1000gn.bash 	
