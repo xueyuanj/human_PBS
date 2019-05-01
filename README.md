@@ -28,7 +28,7 @@ $cat bam.file.list |grep 'bam$' > bamfile.list
 
 --> bam.file.names.txt
 
-##Use featureCounts to get the number of reads of each gene
+### Use featureCounts to get the number of reads of each gene
 
 ##Run get.counts.sh on cluster
 
@@ -37,12 +37,12 @@ $cat bam.file.list |grep 'bam$' > bamfile.list
 $bash get.counts.sh
 
 ##
-##Use DESeq2 to normalize the count data and get FPKM value
+### Use DESeq2 to normalize the count data and get FPKM value
 
 ##Log transform the FPKM by log(FPKM+1)
 
 ##
-##Calculate P<sub>ST</sub> for h<sup>2</sup> =0.5 and h<sup>2</sup>=1
+### Calculate P<sub>ST</sub> for h<sup>2</sup> =0.5 and h<sup>2</sup>=1
 
 
 
@@ -50,14 +50,14 @@ $bash get.counts.sh
 ##
 ## Population-genetic analyses
 ##
-##Download SNP data from 1000 genome website
+### Download SNP data from 1000 genome website
 
 ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
 
 ##Modify the getfilelist.bash to download gz files for each chromosome
 
 ##
-##To remove SNPs with MAF < 0.01, compute MAF. 
+### To remove SNPs with MAF < 0.01, compute MAF. 
 
 ##Note that the MAF here is calculated using all the individuals in the dataset.
 
@@ -68,7 +68,7 @@ ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
 $ bash remove.maf.sh
 
 ##
-##Calculate Hudson's F<sub>ST</sub> for each SNP site. 
+### Calculate Hudson's F<sub>ST</sub> for each SNP site. 
 
 ##Use all the individuals in the four populations
 
@@ -89,7 +89,7 @@ $bash process.1000gn.sh
 $bash merge.bash
 
 ##
-##Map the SNP to genes
+### Map the SNP to genes
 
 ##The annotation file for protein-coding genes is above
 
@@ -98,7 +98,7 @@ $bash merge.bash
 $ python map.probe.py
 
 ##
-##Calculate ratio of average for Hudson's F<sub>ST</sub> for each gene
+### Calculate ratio of average for Hudson's F<sub>ST</sub> for each gene
 
 ##Run python map.probe.py on each chromosome
 
