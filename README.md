@@ -138,5 +138,13 @@ $ Python map.probe.py
 
 fst.hudson.1000genome.4pop.allindividual.ratioofave.maf0.01.pr_coding.rmlow.txt
 
+##
+##
+## 3. Phylogenetic analyse
+##
+### Construct population tree using PHYLIP
+
+##This part result in Figure 1
+
 
 	
