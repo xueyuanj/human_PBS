@@ -226,3 +226,17 @@ $python cnv.human.py
 
 $ ped.max.formal.R
 
+
+##
+##
+## 4. GO enrichment analyses
+
+##The GO analyses were performed on absolute and relativized PBS<sub>4</sub>
+
+##Rank PBS<sub>4</sub> in each population
+
+$R led.relative.R
+
+##Input the ranked list into GOrilla http://cbl-gorilla.cs.technion.ac.il/
+
+##The parameters are: homo sapiens, single ranked list of genes, All(process, function, and component)
