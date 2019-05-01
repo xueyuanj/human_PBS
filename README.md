@@ -1,8 +1,8 @@
-## Population-specific sequence and expression differentiation in Europeans
+# Population-specific sequence and expression differentiation in Europeans
 The goal is the examine the population-specific divergence of genes
 ##
 ##
-# Annotation file 
+## Annotation file 
 
 GRCh37.75
 
