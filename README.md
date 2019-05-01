@@ -4,7 +4,7 @@ The goal is the examine the population-specific divergence of genes
 ##
 ## Annotation file 
 
-GRCh37.75
+##GRCh37.75
 
 remove the header, then keep only protein-coding genes
 
@@ -41,11 +41,20 @@ $bash get.counts.sh
 ##
 ### Use DESeq2 to normalize the count data and get FPKM value
 
-##Log transform the FPKM by log(FPKM+1)
+##Remove the CEU population
+
+##Remove lowly-expressed genes: the ones don't have at least 10 reads on each sample
+
+##Normalization applies the "median ratio method"
+
+$R get.fpkm.4pop.R
+
+--> GD462.fpkm.deseq2.4populations.txt
 
 ##
 ### Calculate P<sub>ST</sub> for h<sup>2</sup> =0.5 and h<sup>2</sup>=1
 
+##Log transform the FPKM by log(FPKM+1)
 
 
 ##
