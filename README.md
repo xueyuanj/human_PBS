@@ -52,9 +52,23 @@ $R get.fpkm.4pop.R
 --> GD462.fpkm.deseq2.4populations.txt
 
 ##
-### Calculate P<sub>ST</sub> for h<sup>2</sup> =0.5 and h<sup>2</sup>=1
+### Calculate P<sub>ST</sub> when h<sup>2</sup> =0.5 and h<sup>2</sup>=1
 
 ##Log transform the FPKM by log(FPKM+1)
+
+##The script will give h<sup>2</sup> =0.5, 0.6, 0.7, 0.8, 0.9, and 1 for each population pair
+
+$R pst.expr.1000gn.R
+
+--> #.pst.5h2values.4pop.fpkm.log.txt
+
+##Merge the population pairs for P<sub>ST</sub> when h<sup>2</sup> =0.5 and h<sup>2</sup>=1
+
+$ R pst.6hvalues.R
+
+--> pst.4pop.deseq.fpkm.log.pr_coding.rmlow.h2.0.5.txt
+
+--> pst.4pop.deseq.fpkm.log.pr_coding.rmlow.h2.1.txt
 
 
 ##
