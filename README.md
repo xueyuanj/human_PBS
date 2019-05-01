@@ -68,7 +68,7 @@ ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
 $ bash remove.maf.sh
 
 ##
-##Calculate Hudson's Fst for each SNP site. 
+##Calculate Hudson's F<sub>ST</sub> for each SNP site. 
 
 ##Use all the individuals in the four populations
 
@@ -98,11 +98,11 @@ $bash merge.bash
 $ python map.probe.py
 
 ##
-##Calculate ratio of average for Hudson's Fst for each gene
+##Calculate ratio of average for Hudson's F<sub>ST</sub> for each gene
 
 ##Run python map.probe.py on each chromosome
 
-##map.probe.py use all the information obtained previously, including SNP with MAP > 0.01, snp to gene map, and Hudson's Fst
+##map.probe.py use all the information obtained previously, including SNP with MAP > 0.01, snp to gene map, and Hudson's F<sub>ST</sub>
 
 $ Python map.probe.py
 
