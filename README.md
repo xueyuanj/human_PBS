@@ -144,7 +144,22 @@ fst.hudson.1000genome.4pop.allindividual.ratioofave.maf0.01.pr_coding.rmlow.txt
 ##
 ### 3.1 Construct population tree using PHYLIP
 
-##This part result in Figure 1
+##This part generates Figure 1
 
+##Convert the F<sub>ST</sub> and P<sub>ST</sub> file into a matrix
 
+$ python get.matrix.py
+
+--> fst.hudson.1000genome.4pop.allindividual.ratioofave.maf0.01.pr_coding.rmlow.phylip
+
+--> pst.4pop.deseq.fpkm.log.pr_coding.rmlow.h2.0.5.phylip
+
+--> pst.4pop.deseq.fpkm.log.pr_coding.rmlow.h2.1.phylip
 	
+##Run neighbor program in PHYLIP package to get gene trees
+
+$ neighbor
+
+##Parameters in order: N, M, 12977(sequence)/13075(expression), random seed, 1, Y
+
+
