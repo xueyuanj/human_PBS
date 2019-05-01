@@ -28,13 +28,15 @@ $cat bam.file.list |grep 'bam$' > bamfile.list
 
 --> bam.file.names.txt
 
-### Use featureCounts to get the number of reads of each gene
+### Use featureCounts to get the number of reads for each gene
 
 ##Run get.counts.sh on cluster
 
 ##get.counts.sh is a wrapper script which implements get.counts.bash
 
 $bash get.counts.sh
+
+--> human.featurecounts.summary.txt
 
 ##
 ### Use DESeq2 to normalize the count data and get FPKM value
