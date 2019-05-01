@@ -14,7 +14,7 @@ There are 22810 genes.
 ##
 ##
 
-##Expression PBS part
+##Gene expression analyses
 
 ##Download bam files from GEUVADIS project
 
@@ -37,8 +37,18 @@ $cat bam.file.list |grep 'bam$' > bamfile.list
 $bash get.counts.sh
 
 ##
+##Use DESeq2 to normalize the count data and get FPKM value
+
+##Log transform the FPKM by log(FPKM+1)
+
 ##
-##Sequence PBS part
+##Calculate P<sub>ST</sub> for h<sup>2</sup> =0.5 and h<sup>2</sup>=1
+
+
+
+##
+##
+##Population-genetic analyses
 ##
 ##Download SNP data from 1000 genome website
 
