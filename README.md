@@ -139,6 +139,14 @@ $ Python map.probe.py
 fst.hudson.1000genome.4pop.allindividual.ratioofave.maf0.01.pr_coding.rmlow.txt
 
 ##
+### 2.6 Correlation between F<sub>ST</sub> and P<sub>ST</sub>
+
+##Compute both Pearson and Spearman's correlation
+
+$R corre.pst.fst.R
+
+
+##
 ##
 ## 3. Phylogenetic analyses
 ##
