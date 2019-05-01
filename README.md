@@ -198,17 +198,23 @@ $ R led.pst.variation.R
 ##
 ### 3.3 Compare sequence and expression PBS<sub>4</sub> between genes with and without copy number variants (CNVs)  
 
+##This part generates Figure 3
+
 ##Obtain the CNVs data from http://dgv.tcag.ca/
 
 $wget http://dgv.tcag.ca/dgv/docs/GRCh37_hg19_variants_2016-05-15.txt
 
 ##Parse the file
 
+$R parse.cnvfile.R
+
 $python cnv.human.py
 
 --> GRCh37_hg19_variants_2016-05-15.ensemblid.genenames.txt
 
 ##Plot only the largest PBS<sub>4</sub> among the four populations
+
+##Two-sample permutation test were used to assess pairwise differences btween all distributions
 
 $ ped.max.formal.R
 
