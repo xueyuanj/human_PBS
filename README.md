@@ -140,7 +140,7 @@ fst.hudson.1000genome.4pop.allindividual.ratioofave.maf0.01.pr_coding.rmlow.txt
 
 ##
 ##
-## 3. Phylogenetic analyse
+## 3. Phylogenetic analyses
 ##
 ### 3.1 Construct population tree using PHYLIP
 
@@ -173,5 +173,5 @@ $ consense
 ##
 ### 3.2 Calculate sequence and expression PBS<sub>4</sub>
 
-
+##Log transform the F<sub>ST</sub> and P<sub>ST</sub> by (1-Z<sub>ST</sub>(X,y))
 
