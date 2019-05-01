@@ -173,5 +173,9 @@ $ consense
 ##
 ### 3.2 Calculate sequence and expression PBS<sub>4</sub>
 
-##Log transform the F<sub>ST</sub> and P<sub>ST</sub> by (1-Z<sub>ST</sub>(X,y))
+##Log transform the F<sub>ST</sub> and P<sub>ST</sub> by E<sub>X,Y</sub> = (1-Z<sub>ST</sub>(X,Y))
+
+##Follow the formula:
+
+##PBS<sub>4,A</sub> = 1/4(2E<sub>A,B</sub> + E<sub>A,C</sub> + E<sub>A,D</sub> - E<sub>B,C</sub> - E<sub>B,D</sub>)
 
