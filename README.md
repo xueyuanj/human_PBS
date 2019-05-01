@@ -173,9 +173,42 @@ $ consense
 ##
 ### 3.2 Calculate sequence and expression PBS<sub>4</sub>
 
-##Log transform the F<sub>ST</sub> and P<sub>ST</sub> by E<sub>X,Y</sub> = (1-Z<sub>ST</sub>(X,Y))
+##Log transform the F<sub>ST</sub> and P<sub>ST</sub> by E<sub>X,Y</sub> = -(1-Z<sub>ST</sub>(X,Y))
+
+##X, Y represent population pairs
 
 ##Follow the formula:
 
-##PBS<sub>4,A</sub> = 1/4(2E<sub>A,B</sub> + E<sub>A,C</sub> + E<sub>A,D</sub> - E<sub>B,C</sub> - E<sub>B,D</sub>)
+PBS<sub>4,A</sub> = 1/4(2E<sub>A,B</sub> + E<sub>A,C</sub> + E<sub>A,D</sub> - E<sub>B,C</sub> - E<sub>B,D</sub>)
+
+##Set negative branch length to 0
+
+##Similar for F<sub>ST</sub> and P<sub>ST</sub>
+
+$ R led.fst.clean.R
+
+--> led.fst.abs.pr_coding.rmlow.transformed.txt
+
+$ R led.pst.variation.R
+
+--> led.pst.h2.0.5.abs.pr_coding.rmlow.transformed.set0.txt (h<sup>2</sup> =0.5)
+
+--> led.qst.abs.pr_coding.rmlow.transformed.txt (h<sup>2</sup>=1)
+
+##
+### 3.3 Compare sequence and expression PBS<sub>4</sub> between genes with and without copy number variants (CNVs)  
+
+##Obtain the CNVs data from http://dgv.tcag.ca/
+
+$wget http://dgv.tcag.ca/dgv/docs/GRCh37_hg19_variants_2016-05-15.txt
+
+##Parse the file
+
+$python cnv.human.py
+
+--> GRCh37_hg19_variants_2016-05-15.ensemblid.genenames.txt
+
+##Plot only the largest PBS<sub>4</sub> among the four populations
+
+$ ped.max.formal.R
 
