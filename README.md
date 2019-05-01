@@ -158,8 +158,20 @@ $ python get.matrix.py
 	
 ##Run neighbor program in PHYLIP package to get gene trees
 
+##The algorithm used is UPGMA, which is implemented by neighbor program
+
 $ neighbor
 
 ##Parameters in order: N, M, 12977(sequence)/13075(expression), random seed, 1, Y
+
+##Run consense to get the population tree based on gene trees
+
+$ consense
+
+##Parameter: R
+
+##
+### 3.2 Calculate sequence and expression PBS<sub>4</sub>
+
 
 
