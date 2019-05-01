@@ -14,9 +14,9 @@ There are 22810 genes.
 ##
 ##
 
-##Gene expression analyses
+## Gene expression analyses
 
-##Download bam files from GEUVADIS project
+### Download bam files from GEUVADIS project
 
 ##List of individual bam files
 
@@ -48,7 +48,7 @@ $bash get.counts.sh
 
 ##
 ##
-##Population-genetic analyses
+## Population-genetic analyses
 ##
 ##Download SNP data from 1000 genome website
 
