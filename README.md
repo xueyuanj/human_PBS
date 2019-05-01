@@ -16,7 +16,7 @@ There are 22810 genes.
 
 ## 1. Gene expression analyses
 
-### Download bam files from GEUVADIS project
+### 1.1 Download bam files from GEUVADIS project
 
 ##List of individual bam files
 
@@ -28,7 +28,7 @@ $cat bam.file.list |grep 'bam$' > bamfile.list
 
 --> bam.file.names.txt
 
-### Use featureCounts to get the number of reads for each gene
+### 1.2 Use featureCounts to get the number of reads for each gene
 
 ##Run get.counts.sh on cluster
 
@@ -39,7 +39,7 @@ $bash get.counts.sh
 --> human.featurecounts.summary.txt
 
 ##
-### Use DESeq2 to normalize the count data and get FPKM value
+### 1.3 Use DESeq2 to normalize the count data and get FPKM value
 
 ##Remove the CEU population
 
@@ -52,7 +52,7 @@ $R get.fpkm.4pop.R
 --> GD462.fpkm.deseq2.4populations.txt
 
 ##
-### Calculate P<sub>ST</sub> when h<sup>2</sup> =0.5 and h<sup>2</sup>=1
+### 1.4 Calculate P<sub>ST</sub> when h<sup>2</sup> =0.5 and h<sup>2</sup>=1
 
 ##Log transform the FPKM by log(FPKM+1)
 
@@ -75,14 +75,14 @@ $ R pst.6hvalues.R
 ##
 ## 2. Population-genetic analyses
 ##
-### Download SNP data from 1000 genome website
+### 2.1 Download SNP data from 1000 genome website
 
 ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
 
 ##Modify the getfilelist.bash to download gz files for each chromosome
 
 ##
-### To remove SNPs with MAF < 0.01, compute MAF. 
+### 2.2 To remove SNPs with MAF < 0.01, compute MAF. 
 
 ##Note that the MAF here is calculated using all the individuals in the dataset.
 
@@ -93,7 +93,7 @@ ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
 $ bash remove.maf.sh
 
 ##
-### Calculate Hudson's F<sub>ST</sub> for each SNP site. 
+### 2.3 Calculate Hudson's F<sub>ST</sub> for each SNP site. 
 
 ##Use all the individuals in the four populations
 
@@ -114,7 +114,7 @@ $bash process.1000gn.sh
 $bash merge.bash
 
 ##
-### Map the SNP to genes
+### 2.4 Map the SNP to genes
 
 ##The annotation file for protein-coding genes is above
 
@@ -123,7 +123,7 @@ $bash merge.bash
 $ python map.probe.py
 
 ##
-### Calculate ratio of average for Hudson's F<sub>ST</sub> for each gene
+### 2.5 Calculate ratio of average for Hudson's F<sub>ST</sub> for each gene
 
 ##Run python map.probe.py on each chromosome
 
@@ -142,7 +142,7 @@ fst.hudson.1000genome.4pop.allindividual.ratioofave.maf0.01.pr_coding.rmlow.txt
 ##
 ## 3. Phylogenetic analyse
 ##
-### Construct population tree using PHYLIP
+### 3.1 Construct population tree using PHYLIP
 
 ##This part result in Figure 1
 
