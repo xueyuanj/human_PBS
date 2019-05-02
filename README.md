@@ -1,5 +1,5 @@
 # Population-specific sequence and expression differentiation in Europeans
-The goal is the examine the population-specific divergence of genes
+The goal is to examine the population-specific divergence of genes
 ##
 ##
 ## Annotation file 
