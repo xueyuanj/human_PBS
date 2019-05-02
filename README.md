@@ -82,7 +82,7 @@ ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/
 ##Modify the getfilelist.bash to download gz files for each chromosome
 
 ##
-### 2.2 To remove SNPs with MAF < 0.01, compute MAF. 
+### 2.2 Remove SNPs with MAF < 0.01
 
 ##Note that the MAF here is calculated using all the individuals in the dataset.
 
