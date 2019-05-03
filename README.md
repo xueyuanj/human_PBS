@@ -129,7 +129,7 @@ $ python map.probe.py
 
 ##map.probe.py use all the information obtained previously, including SNP with MAP > 0.01, snp to gene map, and Hudson's F<sub>ST</sub>
 
-$ Python map.probe.py
+$ Python ratio.of.average.py
 
 ##
 ##Use the expression data to remove lowly expressed ones
